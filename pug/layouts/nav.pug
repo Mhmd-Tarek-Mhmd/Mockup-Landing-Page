@@ -1,0 +1,39 @@
+nav
+  .container.space-between-flex
+    // [1] Logo
+    a(href="/" class="logo") Logo
+
+    // [2] Nav Links
+    ul.nav-links(role='menubar')
+      li #[a(href="#articles" class="border-hover") Articles]
+      li #[a(href="#gallery" class="border-hover") Gallery]
+      li #[a(href="#features" class="border-hover") Features]
+      li.other-links(tabindex="0")
+        a(href="#articles" class="border-hover", aria-haspopup="true", aria-expanded="false", tabindex="-1") Other
+
+        // [3] Mega Menu
+        ul.mega-menu.space-between-flex(role='menu')
+          li.img #[img(src="images/megamenu.png" alt="")]
+
+          ul.mega-menu-links
+            ul
+              - var titles = ['Testimonials', 'Team Members', 'Services', 'Our Skills', 'How It Works']
+              - var linkHrefs = ['testimonials', 'team', 'services', 'skills', 'works']
+              - var icons = ['fa-comments', 'fa-user', 'fa-building', 'fa-check-circle', 'fa-clipboard']
+              each title, i in titles
+                li.left-background-hover
+                  i(class= `far ${icons[i]} fa-fw`)
+                  a(href=`#${linkHrefs[i]}`, tabindex="-1")=title
+
+            ul
+              - var titles = ['Events', 'Pricing Plans', 'Top Videos', 'Stats', 'Request a Discount']
+              - var linkHrefs = ['events', 'pricing', 'videos', 'stats', 'discount']
+              - var icons = ['far fa-calendar-alt', 'fas fa-server', 'far fa-play-circle', 'far fa-chart-bar', 'fas fa-percent']
+              each title, i in titles
+                li.left-background-hover
+                  i(class=`${icons[i]} fa-fw`)
+                  a(href=`#${linkHrefs[i]}`, tabindex="-1")=title
+
+
+
+

@@ -1,0 +1,281 @@
+doctype html
+html(lang="en")
+  head
+    include layouts/meta
+    title Mockup Landing Page
+    include layouts/links
+  body
+    // Header area
+    header
+      #header-bg
+      //- [1] Nav area
+      include layouts/nav
+
+      //- [2] Hero section
+      .hero
+        .container.space-between-flex
+          .hero-text
+            h1 The Lorem
+            p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum doloribus non consequuntur neque, ex eaque iusto a nostrum aliquam blanditiis, provident pariatur distinctio? Explicabo pariatur, laborum officia eos ipsa reprehenderit?
+
+          .hero-img #[img(src="images/hero.png", alt="")]
+
+      //- To Main Link
+      a(href="#main" id="to-main") #[i.fas.fa-angle-double-down.fa-2x]
+
+    // Main area
+    main
+      // Articles section
+      section#articles.articles
+        .container
+          h2.section-title Articles
+          .section-grid
+            - for (var i = 1; i <= 8; i++)
+              .card.up-hover
+                .card-image #[img(src=`images/articles/${i}.jpg` alt='')]
+                .card-body
+                  h3 Title
+                  p Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  a.space-between-flex(href='#')
+                    span Read More
+                    i.fas.fa-long-arrow-alt-right
+
+      // Gallery section
+      section#gallery.gallery.dots
+        .spikes
+        .container
+          h2.section-title Gallery
+          .section-grid
+            - for (var i = 1; i<=6; i++)
+              .card #[img(src=`images/gallery/${i}.png` alt='')]
+
+      // Features section
+      section#features.features
+        .container
+          h2.section-title Features
+          .section-grid
+            - for (var i=1; i<=3; i++)
+              .card
+                .image #[img(src=`images/features/${i}.jpg` alt='')]
+                .card-body
+                  h3 Title
+                  p
+                    | Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                    | harum hic veniam eligendi minima
+                  a.left-background-hover(href='#') More
+
+      // Testimonials section
+      section#testimonials.testimonials.dots
+        .spikes
+        .container
+          h2.section-title Testimonials
+          .section-grid
+            - for (var i=1; i<=6; i++)
+              .card
+                .image.center-flex #[img(src=`images/testimonials/${i}.png` alt='')]
+                h3 Name
+                p Job Title
+                .rate.center-flex
+                  i.filled.fas.fa-star
+                  i.filled.fas.fa-star
+                  i.filled.fas.fa-star
+                  i.far.fa-star
+                  i.far.fa-star
+                p
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+                  | et reiciendis voluptatum, amet est natus quaerat ducimus.
+
+      // Team section
+      section#team.team
+        .container
+          h2.section-title Team Members
+          .section-grid
+            - for (var i=1; i<=8; i++)
+              .card.right-background-hover.left-background-hover
+                .center-flex
+                  .image #[img(src=`images/team/${i}.jpg` alt='')]
+                  .social
+                    a(href='#') #[i.fab.fa-facebook-f]
+                    a(href='#') #[i.fab.fa-twitter]
+                    a(href='#') #[i.fab.fa-linkedin]
+                    a(href='#') #[i.fab.fa-youtube]
+                .info
+                  h3 Name
+                  p Simple Short Description
+
+      // Services section
+      section#services.services.dots
+        .spikes
+        .container
+          h2.section-title Services
+          .section-grid
+            - const servicesTitles = ['Security', 'Fixing Issues', 'Location', 'Coding', 'Design', 'Marketing']
+            each item, i in ['user-shield', 'tools', 'map-marked-alt', 'laptop-code', 'palette', 'bullhorn']
+              .card.up-hover.border-hover
+                  i(class=`fas fa-${item} fa-4x`)
+                  h3 #{servicesTitles[i]}
+                  a(href='#') Details
+
+      // Skills section
+      section#skills.skills
+        .container
+          h2.section-title Our Skills
+          .space-between-flex
+            .image #[img(src='images/skills.png' alt='')]
+            .skills-container
+              - const skills = ['HTML', 'CSS', 'JavaScript', 'Python']
+              each percentage, i in ['80%', '85%', '70%', '80%']
+                .skill
+                  .space-between-flex
+                    h3=skills[i]
+                    span.skill-rate=percentage
+                  .progress-bar
+                    span(style='width: 0' data-percentage=`${percentage}`)
+
+      // Works section
+      section#works.works
+        .spikes
+        .container
+          h2.section-title How it Works?
+          .center-flex
+            .image #[img(src='images/works/bg.png' alt='')]
+            .cards
+              each title, i in ['Analysis', 'Architecture', 'Developement']
+                .card.center-background-hover.space-between-flex
+                  img(src=`images/works/${i+1}.png` alt='')
+                  div
+                    h3=title
+                    p
+                      | Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      | Enim nesciunt obcaecati quisquam quis laborum recusandae
+                      | debitis vel
+
+      // Events section
+      section#events.events
+        .container
+          h2.section-title Latest Events
+          .space-between-flex
+            .image #[img(src='images/events.png' alt='')]
+            div
+              .counter
+                .days
+                  span 
+                  span Days
+                .hours
+                  span 
+                  span Hours
+                .minutes
+                  span 
+                  span Minutes
+                .seconds
+                  span 
+                  span Seconds
+              h3 Tech Masters Event 2021
+              p
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Et vero
+                | tenetur doloremque iusto ut adipisci quam ratione aliquam
+                | excepturi nulla in harum, veritatis porro
+
+          form.center-flex
+            input(type='email' name='mail' placeholder='Enter your email')
+            input(type='submit' value='Subscribe')
+
+      // Pricing section
+      section#pricing.pricing.dots
+        .spikes
+        .container
+          h2.section-title Pricing Plans
+          .section-grid
+            - const prices = [15, 25, 35]
+            each name, i in ['basic', 'advanced', 'professional']
+              .card.right-background-hover.left-background-hover
+                if name === 'advanced'
+                  .most-popular Most Popular
+                .card-top
+                  h3=name
+                  img(src=`images/pricing-plans/hosting-${name}.png` alt='')
+                  .price
+                    span #[small $]#{prices[i]}
+                    span Per Month
+                ul.card-body
+                  if name === 'basic'
+                    li 10GB HDD Space
+                    li 5 Email Addresses
+                    li 2 Subdomains
+                    li 4 Databases
+                    li Basic Support
+                  if name === 'advanced'
+                    li 20GB HDD Space
+                    li 10 Email Addresses
+                    li 5 Subdomains
+                    li 8 Databases
+                    li Advanced Support
+                  if name === 'professional'
+                    li 50GB HDD Space
+                    li 20 Email Addresses
+                    li 10 Subdomains
+                    li 20 Databases
+                    li Professional Support
+
+                  a(href='#') Choose Plan
+
+      // Videos section
+      section#videos.videos
+        .container
+          h2.section-title Top Videos
+          .videos-player
+            .space-between-flex
+              .videos-list
+                .header.space-between-flex
+                  h3 Top Videos
+                  i.fas.fa-random
+                div
+                  - for (var i=0; i<6; i++)
+                    .video
+                      p.video-name Video Name
+                      span.video-duration 00:00
+
+              .video-frame
+                img(src='images/video-preview.jpg' alt='')
+
+      // Stats section
+      section#stats.stats
+        .container
+          h2.section-title Our stats
+          .section-grid
+            - const statsIcons = ['far fa-user', 'fas fa-code', 'fas fa-globe-asia', 'far fa-money-bill-alt']
+            - const statsTitles = ['Clients', 'Projects', 'Countries', 'Money']
+            each num, i in [150, 135, 50, 500]
+              .card
+                .left.border-hover
+                .right.border-hover
+                i(class=`${statsIcons[i]} fa-2x fa-fw`)
+                h3(data-num=`${num}`) 0
+                em=statsTitles[i]
+
+      // Discount section
+      #discount.discount
+        .container
+          .section-grid
+            .info
+              h2 We Have A Discount
+              p
+                | Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                | Excepturi asperiores consectetur, recusandae ratione provident
+                | necessitatibus, cumque delectus commodi fuga praesentium beatae.
+                | Totam vel similique laborum dicta aperiam odit doloribus
+                | corporis.
+              img(src='images/discount/1.png' alt='')
+            form
+              h2 Request A Discount
+              input(type='text' name='name' placeholder='Your name' aria-label='Your name' required)
+              input(type='email' name='mail' placeholder='Your email' aria-label='Your email' required)
+              input(type='tel' name='tel' placeholder='Your phone' aria-label='Your phone' required)
+              textarea(name='needs' cols='30' rows='10' placeholder='Tell us about your needs' aria-label='Tell us about your needs')
+              input(type='submit' value='Send')
+
+    // Footer area
+    include layouts/footer
+
+    script
+      include layouts/script.js

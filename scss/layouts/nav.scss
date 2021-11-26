@@ -1,0 +1,108 @@
+nav {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0px 5px 5px rgb(0 0 0 / 10%);
+  & > .space-between-flex {
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+
+  // [1] Logo
+  .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--main);
+    @media (max-width: 767px) {
+      padding: 15px 0;
+    }
+  }
+
+  // [2] Nav Links
+  .nav-links {
+    display: flex;
+    font-size: 1.2em;
+    li a:first-child {
+      padding: 25px 15px;
+      position: relative;
+      display: inline-block;
+      color: var(--headings);
+      will-change: background-color, color;
+      &:hover {
+        color: var(--main);
+        background-color: #fafafa;
+      }
+    }
+    li.other-links:hover .mega-menu {
+      z-index: 1;
+      opacity: 1;
+      top: calc(100% + 2px);
+    }
+  }
+
+  // [3] Mega Menu
+  .mega-menu {
+    left: 50%;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    top: calc(100% + 50px);
+    background-color: #fff;
+    transform: translateX(-50%);
+    border-bottom: 3px solid var(--main);
+    opacity: 0;
+    z-index: -1;
+    will-change: top, opacity, z-index;
+    transition: top var(--transition-time), opacity 0.5s;
+    &.focus-show {
+      z-index: 1;
+      opacity: 1;
+      top: calc(100% + 2px);
+    }
+
+    .img {
+      flex-basis: 35%;
+    }
+    @media (max-width: 767px) {
+      justify-content: center;
+
+      .img {
+        display: none;
+      }
+    }
+
+    .mega-menu-links {
+      display: grid;
+      min-width: 50%;
+      @media (min-width: 500px) {
+        column-gap: 40px;
+        grid-template-columns: 1fr 1fr;
+      }
+      @media (max-width: 499px) {
+        width: 100%;
+      }
+
+      ul:first-child {
+        @media (max-width: 499px) {
+          border-bottom: 1px solid var(--separator-color);
+        }
+      }
+
+      li {
+        padding: 15px;
+        font-weight: bold;
+        color: var(--main);
+        &:nth-of-type(even) {
+          border-top: 1px solid var(--separator-color);
+          border-bottom: 1px solid var(--separator-color);
+        }
+        &.left-background-hover::after {
+          background-color: #fafafa;
+        }
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+footer
+  .container
+    .section-grid
+      // [1] Info
+      .info
+        a.logo(href='#') Logo
+        .social
+          a(href='#') #[i.fab.fa-facebook-f]
+          a(href='#') #[i.fab.fa-twitter]
+          a(href='#') #[i.fab.fa-youtube]
+        p
+          | Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          | Temporibus nulla rem, dignissimos iste aspernatur.
+
+      // [2] Links
+      ul.links
+        - for (var i=0; i<5; i++)
+          li #[a(href='#') Important Link]
+
+      // [3] Contacts
+      .contacts
+        div
+          i.fas.fa-map-marker-alt.fa-fw
+          address Egypt, Giza, Inside The Sphinx, Room Number 220
+        div
+          i.far.fa-clock.fa-fw
+          span Business Hours: From 10:00 To 18:00
+        div
+          i.fas.fa-phone.fa-fw
+          span
+            | +20123456789
+            br
+            | +20198765432
+
+  p
+    | Made with
+    i.fas.fa-heart
