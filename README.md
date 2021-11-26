@@ -8,7 +8,12 @@
 
 ## Screenshots
 
+### Desktop Design
+
 ![](screenshots/desktop.png)
+
+### Desktop Design
+
 ![](screenshots/mobile.png)
 
 ## Credits
