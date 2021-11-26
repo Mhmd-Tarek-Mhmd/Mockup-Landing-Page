@@ -8,11 +8,11 @@
 
 ## Screenshots
 
-### Desktop Design
+### 1- Desktop Design
 
 ![](screenshots/desktop.png)
 
-### Desktop Design
+### 2- Mobile Design
 
 ![](screenshots/mobile.png)
 
