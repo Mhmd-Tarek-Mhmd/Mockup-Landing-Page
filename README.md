@@ -4,7 +4,7 @@
 
 ## Live Site
 
-- Live Site [URL](https://mhmd-tarek-mhmd.github.io/Mockup-Landing-Page/)
+- Live Site [URL](https://mhmd-tarek-mhmd.github.io/Mockup-Landing-Page/dist)
 
 ## Screenshots
 
