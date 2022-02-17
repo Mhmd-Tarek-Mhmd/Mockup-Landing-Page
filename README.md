@@ -8,7 +8,7 @@
 
 ## Credits
 
-- The design and images from Elzero Youtube [channel](https://www.youtube.com/playlist?list=PLDoPjvoNmBAxuCSp2_-9LurPqRVwketnc).
+- The design and images are from Elzero Youtube [channel](https://www.youtube.com/playlist?list=PLDoPjvoNmBAxuCSp2_-9LurPqRVwketnc).
 
 ## Screenshots
 
